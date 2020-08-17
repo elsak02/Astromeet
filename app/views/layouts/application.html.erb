@@ -4,6 +4,9 @@
     <title>Rbnb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -11,10 +14,15 @@
   </head>
 
   <body>
+
+
+    <%= render 'shared/navbar' %>
+
+    <%= yield %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= yield %>
     <footer>
       <%= render 'shared/footer' %>
     </footer>
