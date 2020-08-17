@@ -8,6 +8,7 @@
 require 'faker'
 require 'open-uri'
 
+Astrologist.destroy_all
 User.destroy_all
 puts "Creating User seeds..."
 
@@ -20,8 +21,24 @@ user.save
 p user
 end
 
-#nadine = User.create(first_name: "Nadine", last_name: "Jane", birth_date: )
-#puts "Creating Astrologist seeds..."
-#Astrologist.create(description: "I am an Astrologer, using my background as a digital designer to make astrology accessible, relatable, and beautiful. Through my platform, I work to share the tools of  self-discovery and self-knowledge that my astrology practice has given me.
-#{}", price: 90)
+puts "Creating Astrologist seeds..."
+file = URI.open(Faker::Avatar.image(slug: "my-own-slug", size: "50x50", format: "jpg"))
+
+nadine = User.create(email: "nadine.jane@gmail.com", password: "lkjlkj678", first_name: "Nadine", last_name: "Jane", birth_date: "1981-10-02", birth_time: "2000-01-01 22:10:47", birth_place: "New York City")
+nadine.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+astro_nadine = Astrologist.create(experience: "I am an Astrologer, using my background as a digital designer to make astrology accessible, relatable, and beautiful. Through my platform, I work to share the tools of  self-discovery and self-knowledge that my astrology practice has given me.", price: 90, user: nadine)
+
+sally = User.create(email: "sally.brompton@gmail.com", password: "lkjlkj678", first_name: "Sally", last_name: "Brompton", birth_date: "1971-10-25", birth_time: "2000-01-01 10:10:47", birth_place: "Washington")
+sally.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+astro_sally = Astrologist.create(experience: "I am a professional astrologer and writer. I trained and worked with the world-renowned astrologer Patric Walker for many years until his death in 1995 when I succeeded him as the astrologer for: The Mail on Sunday (UK), The New York Post, TV Guide (USA), The Globe and Mail (Canada)", price: 100, user: sally)
+
+aliza = User.create(email: "aliza.kelly@gmail.com", password: "lkjlkj678", first_name: "Aliza", last_name: "Kelly", birth_date: "1985-04-25", birth_time: "2000-01-01 15:10:47", birth_place: "San Diego")
+aliza.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+astro_aliza = Astrologist.create(experience: "As the resident astrologer of Cosmopolitan Magazine, my work appears in digital, print, and video. In addition to my monthly digital horoscopes, my cosmic advice column — Ask Astrolobestie — is published each month in Cosmopolitan’s print magazine. I also have contributed to numerous publications including Allure, Girlboss, BuzzFeed, Cheddar, Sanctuary, among many others.", price: 95, user: aliza)
+
+susan = User.create(email: "susan.miller@gmail.com", password: "lkjlkj678", first_name: "Susan", last_name: "Miller", birth_date: "1975-03-15", birth_time: "2000-01-01 12:10:47", birth_place: "Boston")
+susan.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+astro_susan = Astrologist.create(experience: "Best-selling book author, web publisher, and businesswoman, my achievements and contributions to the field of astrology have made myself an authority in my field. From Wall Street brokers to the models on fashion catwalks of Paris, Milan, and Tokyo; from readers in cafés in New York, Beijing, and Sao Paulo, to those discussing her words in New Delhi and Istanbul, people everywhere turn to me to advise, teach, lecture, and lead them toward success in both their personal life and business endeavors.", price: 120, user: susan)
+
+
 #Astrologist.create(description: )
