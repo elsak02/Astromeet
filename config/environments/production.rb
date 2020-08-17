@@ -80,6 +80,10 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+   #default url options in our environments
+
+  config.action_mailer.default_url_options = { host: 'https://astromeet-elsak02.herokuapp.com/' }
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
