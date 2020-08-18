@@ -1,6 +1,18 @@
-<% @astrologists.each do |astrologist| %>
-    <%= "#{astrologist.user.first_name}" %>
-   <%= "#{astrologist.user.last_name}" %>
-   <%= "#{astrologist.experience}" %>
-   <%= "#{astrologist.price}" %>
-<% end %>
+<div class="container">
+    <div class="grid">
+      <% @astrologists.each do |astrologist| %>
+      <div class="card-product">
+        <% if astrologist.user.photo.attached? %>
+          <%= cl_image_tag astrologist.user.photo.key, height: 150, width: 120, crop: :fill  %>
+        <% else %>
+            <%= image_tag "logo_astromeet_regular.png" %>
+        <% end %>
+
+        <div class="card-product-infos">
+          <h2><%= "#{astrologist.user.first_name}" %> <%= "#{astrologist.user.last_name}" %></h2>
+          <p><strong><%= "#{astrologist.price}" %></strong><strong>Euros</strong></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
