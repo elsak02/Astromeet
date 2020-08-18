@@ -1,19 +1,25 @@
 <div class="container">
 
   <div class="row">
-    <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center mt-3">
+      <div id="l-box-shadow">
       <% if @astrologist.user.photo.attached? %>
         <%= cl_image_tag @astrologist.user.photo.key, width: 338, heigth: 450 %>
       <% end %>
-    <div class=" d-flex align-items-center">
-      <div class="container-right-text">
-        <h1><%= @astrologist.user.first_name %></h1>
-        <h1><%= @astrologist.user.last_name %></h1>
+      </div>
+    <div class=" d-flex align-items-center position-relative">
+      <div class="container-right-text ml-4">
+        <h1><%= @astrologist.user.first_name %> <%= @astrologist.user.last_name %></h1>
         <p><%= @astrologist.experience%></p>
+        <h3> Price per hour: <%= @astrologist.price %>€</h3>
+        <button class="button">Book this astrologist</button>
+      </div>
+    </div>
         <h3> <%= @astrologist.price %></h3>
         <button class="button">Back to the offers</button>
         <%= link_to "Edit offer", edit_astrologist_path, class: "button" %>
+      </div>
     </div>
   </div>
+  </div>
 </div>
-

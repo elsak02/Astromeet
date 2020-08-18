@@ -1,0 +1,10 @@
+<div class="content">
+  <div class="container d-flex justify-content-center py-5 my-3">
+    <%= simple_form_for @astrologist do |f| %>
+      <%= f.input :experience, :label => 'Tell us about your experience:', :label_html => { :class => 'label' } %>
+      <%= f.input :price, :label => 'Price per hour:', :label_html => { :class => 'label' } %>
+      <%= f.submit 'Create astrologist profile', class:'button submit' %>
+    <% end %>
+  </div>
+</div>
+
