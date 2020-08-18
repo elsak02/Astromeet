@@ -1,0 +1,19 @@
+.profile-card {
+  border: 1px solid #CBB569;
+  margin: 10px;
+
+  .card-top {
+    color: #CBB569;
+    font-family: $headers-font;
+    border-bottom: 1px solid #CBB569;
+    text-align: center;
+
+  }
+
+  .card-bottom {
+    color: #294045;
+    font-family: $body-font;
+    padding: 10px;
+  }
+
+  }
