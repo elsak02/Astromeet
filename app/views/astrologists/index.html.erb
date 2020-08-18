@@ -1,0 +1,6 @@
+<% @astrologists.each do |astrologist| %>
+    <%= "#{astrologist.user.first_name}" %>
+   <%= "#{astrologist.user.last_name}" %>
+   <%= "#{astrologist.experience}" %>
+   <%= "#{astrologist.price}" %>
+<% end %>
