@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="row">
+    <div class="d-flex align-items-center justify-content-center">
+      <% if @astrologist.user.photo.attached? %>
+        <%= cl_image_tag @astrologist.user.photo.key, width: 338, heigth: 450 %>
+      <% end %>
+    <div class=" d-flex align-items-center">
+      <div class="container-right-text">
+        <h1><%= @astrologist.user.first_name %></h1>
+        <h1><%= @astrologist.user.last_name %></h1>
+        <p><%= @astrologist.experience%></p>
+        <h3> <%= @astrologist.price %></h3>
+        <button class="button">Back to the offers</button>
+    </div>
+  </div>
+</div>
+
