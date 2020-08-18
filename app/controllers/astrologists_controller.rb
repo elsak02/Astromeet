@@ -3,4 +3,7 @@ class AstrologistsController < ApplicationController
     @astrologists = Astrologist.all
   end
 
+  def show
+    @astrologist = Astrologist.find(params[:id])
+  end
 end
