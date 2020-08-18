@@ -6,5 +6,3 @@ Rails.application.routes.draw do
   resources :astrologists, only: [:index, :show, :new, :create]
   resources :users, only: [:show]
 end
-
-
