@@ -1,0 +1,16 @@
+<div class="content">
+  <h1>Edit profile</h1>
+
+  <%= simple_form_for(@astrologist) do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :experience %>
+      <%= f.input :price %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Edit profile" %>
+    </div>
+  <% end %>
+
+</div>
