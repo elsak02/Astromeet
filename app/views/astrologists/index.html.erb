@@ -1,36 +1,26 @@
 <div class="container content">
-    <div class="services-info">
-      <h1>What do you fancy?</h1>
-        <div class="inline">
-          <div class="service-card">
-            <p class="emoji">🌙</p>
-            <p>Natal chart reading</p>
-          </div>
-            <div class="service-card">
-            <p class="emoji">🔭</p>
-            <p>12-month astrology forecast</p>
-            </div>
-          <div class="service-card">
-            <p class="emoji">💑</p>
-            <p>Couple compatibility analysis</p>
-          </div>
-          <div class="service-card">
-            <p class="emoji">💕</p>
-            <p>Love coaching</p>
-          </div>
-        </div>
-    </div>
+
   <div class="astrologists-list">
-       <h1>Our amazing astrologists are here to help you</h1>
+    <h1 class=" title pt-5">Our amazing astrologists are here to help you</h1>
       <div class="grid">
         <% @astrologists.each do |astrologist| %>
-        <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path(astrologist.user.photo.key)%>'); background-size: cover; height: 300px;">
-          <div class="name-card">
-            <h2 class="horizontal-line pb-3"><%= link_to "#{astrologist.user.first_name} #{astrologist.user.last_name}", astrologist_path(astrologist)%></h2>
-            <p><strong><%= "#{astrologist.price}" %></strong><strong> €</strong></p>
+          <div class="d-flex justify-content-center">
+            <div class="astrologist-card my-4">
+              <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path astrologist.user.photo.key %>')">
+                <div class="name-card">
+                  <h1><%= astrologist.user.first_name %></h1>
+                  <h1 class="horizontal-line"><%= astrologist.user.last_name %></h1>
+                </div>
+              </div>
+              <div class="card-bottom pl-3 py-3">
+                <p> <strong>Price per hour:</strong> <%= astrologist.price %></p>
+                <%= link_to "See details", astrologist_path(astrologist)%>
+              </div>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
   </div>
 </div>
+
+
