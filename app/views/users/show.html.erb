@@ -1,15 +1,23 @@
-<div class="container d-flex justify-content-center">
-  <div class="profile-card my-5">
-    <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @user.photo.key %>')">
-      <div class="name-card">
-        <h1><%= @user.first_name %></h1>
-        <h1 class="horizontal-line pb-3"><%= @user.last_name %></h1>
+<div class="container content text-center">
+  <div class="d-flex justify-content-center">
+    <div class="profile-card my-5">
+      <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @user.photo.key %>')">
+        <div class="name-card">
+          <h1><%= @user.first_name %></h1>
+          <h1 class="horizontal-line pb-3"><%= @user.last_name %></h1>
+        </div>
+      </div>
+      <div class="card-bottom">
+        <p> <strong>Date of birth:</strong> <%= @user.birth_date %></p>
+        <p> <strong>Time of birth:</strong> <%= @user.birth_time %></p>
+        <p> <strong>Place of birth:</strong> <%= @user.birth_place %></p>
       </div>
     </div>
-    <div class="card-bottom">
-      <p> <strong>Date of birth:</strong> <%= @user.birth_date %></p>
-      <p> <strong>Time of birth:</strong> <%= @user.birth_time %></p>
-      <p> <strong>Place of birth:</strong> <%= @user.birth_place %></p>
-    </div>
   </div>
+  <%= link_to 'Edit profile', edit_user_registration_path, class: "button" %>
+  <% if current_user.astrologists.length <= 0 %>
+   <%= link_to 'Register as an astrologist', new_astrologist_path, class: "button" %>
+   <% else %>
+   <%= link_to 'Edit astrologist profile', edit_astrologist_path, class: "button" %>
+  <% end %>
 </div>
