@@ -2,3 +2,30 @@
 .header {
   background-color:#1F3136;
 }
+
+.services-info{
+  margin-bottom: 50px;
+}
+
+.inline {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-card {
+  text-align: center;
+  p {
+    padding: 20px;
+  }
+
+}
+
+.icon {
+  font-size :40px
+}
+
+.astrologists-list .title {
+  font-size: 32px;
+  text-align: center;
+}

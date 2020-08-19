@@ -51,5 +51,10 @@ susan = User.create(email: "susan.miller@gmail.com", password: "lkjlkj678", firs
 susan.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
 astro_susan = Astrologist.create(experience: "Best-selling book author, web publisher, and businesswoman, my achievements and contributions to the field of astrology have made myself an authority in my field. From Wall Street brokers to the models on fashion catwalks of Paris, Milan, and Tokyo; from readers in cafés in New York, Beijing, and Sao Paulo, to those discussing her words in New Delhi and Istanbul, people everywhere turn to me to advise, teach, lecture, and lead them toward success in both their personal life and business endeavors.", price: 120, user: susan)
 
+file = URI.open("https://bloximages.newyork1.vip.townnews.com/journalnow.com/content/tncms/assets/v3/editorial/8/3c/83cdbc53-35a4-5a15-a074-3e17255725ad/5d0c4cac5d85b.image.jpg")
+ross = User.create(email: "ross.clarck@gmail.com", password: "lkjlkj678", first_name: "Ross", last_name: "Clark", birth_date: "1975-04-15", birth_time: "2000-01-01 12:10:47", birth_place: "Washington")
+ross.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
+astro_ross = Astrologist.create(experience: "Ross Clark is the CEO and Co-Founder of Sanctuary, an innovative venture-backed start-up focusing on astrology and other mystical products and services. Ross has spent his career at the cutting edge of digital media, leading business development and strategy for the boldest names in the industry: NBCUniversal, Hearst, Snap and Condé Nast. In this span, he has brokered industry-first partnerships between established and emerging players. Astrology and mystical services are misunderstood corners of wellness that has yet to be holistically digitalized and communicated to the mainstream public. With his keen understanding of what type of content and services draws views and engagement, Ross is reimaging the category for a mobile-first UX and building a new, dynamic component of the sharing economy. ", price: 140, user: ross)
+
 
 
