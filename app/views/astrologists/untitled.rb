@@ -1,34 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
-require 'open-uri'
-require 'stringio'
-
 Astrologist.destroy_all
 User.destroy_all
 puts "Creating User seeds..."
 
 file = URI.open("https://ca.slack-edge.com/T02NE0241-U016QP7SC3T-08569d0aebdd-512")
-mathilda_test = User.new(email: "mathilda@astromeet.com", password: "123456",first_name: "Mathilda", last_name: "Djamdjan", birth_date: "1993-10-02", birth_time: "2000-01-01 22:10:47", birth_place: "Paris")
+mathilda_test = User.new(email: "mathilda@astromeet.com", password: "123456",first_name: Mathilda, last_name: Djamdjan, birth_date: "1993-10-02", birth_time: "2000-01-01 22:10:47", birth_place: "Paris")
 mathilda_test.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
 mathilda_test.save
 
 file = URI.open("https://ca.slack-edge.com/T02NE0241-U017200856C-a05cbb7994a7-512")
-quentin_test = User.new(email: "quentin@astromeet.com", password: "123456",first_name: "Quentin", last_name: "Clement", birth_date: "1993-10-02", birth_time: "2000-01-01 22:10:47", birth_place: "Paris")
+quentin_test = User.new(email: "quentin@astromeet.com", password: "123456",first_name: Quentin, last_name: Clement, birth_date: "1993-10-02", birth_time: "2000-01-01 22:10:47", birth_place: "Paris")
 quentin_test.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
 quentin_test.save
 
-# 10.times do |user|
-# file = URI.open("https://source.unsplash.com/featured/?portrait")
-# user = User.new(email: Faker::Internet.email, password: "12kjdjjhD3",first_name: Faker::Name.first_name, last_name: Faker::Name.last_name , birth_date: Faker::Date.birthday(min_age: 18, max_age: 45), birth_time: Faker::Time.backward, birth_place: Faker::Address.city)
-# user.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
-# user.save
-# end
+10.times do |user|
+file = URI.open("https://source.unsplash.com/featured/?portrait")
+user = User.new(email: Faker::Internet.email, password: "12kjdjjhD3",first_name: Faker::Name.first_name, last_name: Faker::Name.last_name , birth_date: Faker::Date.birthday(min_age: 18, max_age: 45), birth_time: Faker::Time.backward, birth_place: Faker::Address.city)
+user.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
+user.save
+end
 
 puts "Creating Astrologist seeds..."
 file = URI.open("https://s.abcnews.com/images/GMA/nadine-jane-11-abc-jef-200324_hpMain_4x3_608.jpg")
@@ -50,6 +39,3 @@ file = URI.open("https://mysolluna.com/wp-content/uploads/2019/02/Susan-pix-whit
 susan = User.create(email: "susan.miller@gmail.com", password: "lkjlkj678", first_name: "Susan", last_name: "Miller", birth_date: "1975-03-15", birth_time: "2000-01-01 12:10:47", birth_place: "Boston")
 susan.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
 astro_susan = Astrologist.create(experience: "Best-selling book author, web publisher, and businesswoman, my achievements and contributions to the field of astrology have made myself an authority in my field. From Wall Street brokers to the models on fashion catwalks of Paris, Milan, and Tokyo; from readers in cafés in New York, Beijing, and Sao Paulo, to those discussing her words in New Delhi and Istanbul, people everywhere turn to me to advise, teach, lecture, and lead them toward success in both their personal life and business endeavors.", price: 120, user: susan)
-
-
-
