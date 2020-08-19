@@ -7,8 +7,6 @@ class AstrologistsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
-    @astrologist = Astrologist.find(params[:id])
   end
 
   def new
