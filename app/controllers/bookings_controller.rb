@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   def new
+    @booking = Booking.new
+    @astrologist = Astrologist.find(params[:astrologist_id])
   end
 
   def create
@@ -8,9 +10,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.astrologist = @astrologist
     if @booking.save
-      redirect_to astrologist_path(@astrologist)
+      redirect_to user_path(current_user)
     else
-      render "astrologists/show"
+      render :new
     end
   end
 
