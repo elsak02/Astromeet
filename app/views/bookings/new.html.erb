@@ -1,15 +1,12 @@
 <div class="content">
-  <h1>Book a session</h1>
-  <%= simple_form_for [@astrologist, @booking] do |f| %>
-
-    <div class="form-inputs">
-      <%= f.input :date %>
-      <%= f.input :time %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Book the Date" %>
-    </div>
-  <% end %>
-
+  <h1 class="text-center mt-5">Book a session</h1>
+  <div class="container d-flex justify-content-center py-5 my-3">
+    <%= simple_form_for [@astrologist, @booking] do |f| %>
+        <%= f.input :date, :label_html => { :class => 'label' } %>
+        <%= f.input :time, :label_html => { :class => 'label' } %>
+        <%= f.button :submit, "Book the Date", class:'button submit' %>
+      </div>
+    <% end %>
 </div>
+
+
