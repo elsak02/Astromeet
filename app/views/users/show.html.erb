@@ -6,14 +6,25 @@
           <h1><%= @user.first_name %></h1>
           <h1 class="horizontal-line pb-3"><%= @user.last_name %></h1>
         </div>
-      </div>
-      <div class="card-bottom">
-        <p> <strong>Date of birth:</strong> <%= @user.birth_date %></p>
-        <p> <strong>Time of birth:</strong> <%= @user.birth_time %></p>
-        <p> <strong>Place of birth:</strong> <%= @user.birth_place %></p>
-      </div>
     </div>
+    <div class="card-bottom">
+      <p> <strong>Date of birth:</strong> <%= @user.birth_date.strftime(" %A %e %B %Y") %></p>
+      <p> <strong>Time of birth:</strong> <%= @user.birth_time.strftime(" %l %p %M") %></p>
+      <p> <strong>Place of birth:</strong> <%= @user.birth_place %></p>
+    </div>
+   </div>
+  <div>
+    <h1 class="text-center mt-5 booking-text">My Bookings</h1>
+    <% current_user.bookings.each do |booking| %>
+      <div class="booking-card my-5 ml-5 mb-3">
+        <div class="card-bottom">
+          <p><strong>Name of the Astrologist:</strong> <%= booking.astrologist.user.first_name %> <%= booking.astrologist.user.last_name %></p>
+          <p><strong>Date of the Booking:</strong> <%= booking.date.strftime(" %A %e %B %Y") %> at <%= booking.time.strftime(" %l %p %M") %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
+ </div>
   <%= link_to 'Edit profile', edit_user_registration_path, class: "button" %>
   <% if current_user.astrologists.length <= 0 %>
    <%= link_to 'Register as an astrologist', new_astrologist_path, class: "button" %>
