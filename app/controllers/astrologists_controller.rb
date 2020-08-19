@@ -17,7 +17,7 @@ class AstrologistsController < ApplicationController
     @astrologist = Astrologist.new(strong_params)
     @astrologist.user = current_user
     if @astrologist.save
-      redirect_to user_path(current_user)
+      redirect_to astrologist_path(@astrologist)
     else
       render :new
     end
