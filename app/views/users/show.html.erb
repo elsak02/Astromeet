@@ -7,11 +7,20 @@
       </div>
     </div>
     <div class="card-bottom">
-      <p> <strong>Date of birth:</strong> <%= @user.birth_date %></p>
-      <p> <strong>Time of birth:</strong> <%= @user.birth_time %></p>
+      <p> <strong>Date of birth:</strong> <%= @user.birth_date.strftime(" %A %e %B %Y") %></p>
+      <p> <strong>Time of birth:</strong> <%= @user.birth_time.strftime(" %l %p %M") %></p>
       <p> <strong>Place of birth:</strong> <%= @user.birth_place %></p>
     </div>
   </div>
-
-    <p> <strong>Booking:</strong> <%= current_user.bookings.date %> <%= current_user.bookings.time %></p>
+  <div>
+    <h1 class="text-center mt-5 booking-text">My Bookings</h1>
+    <% current_user.bookings.each do |booking| %>
+      <div class="booking-card my-5 ml-5 mb-3">
+        <div class="card-bottom">
+          <p><strong>Name of the Astrologist:</strong> <%= booking.astrologist.user.first_name %> <%= booking.astrologist.user.last_name %></p>
+          <p><strong>Date of the Booking:</strong> <%= booking.date.strftime(" %A %e %B %Y") %> at <%= booking.time.strftime(" %l %p %M") %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

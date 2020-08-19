@@ -30,3 +30,24 @@
     border-bottom: 2px solid #CBB569;
   }
 
+.booking-card {
+  width: 400px;
+  box-shadow: 0px 0px 7px rgba(0,0,0,0.2);
+
+  .card-bottom strong {
+    color: #CBB569;
+    font-family: $headers-font;
+  }
+
+  .card-bottom {
+    color: #294045;
+    font-family: $headers-font;
+    padding: 10px;
+  }
+
+  }
+
+.booking-text {
+  color: #CBB569;
+  font-family: $headers-font;
+}
