@@ -27,8 +27,7 @@ class AstrologistsController < ApplicationController
   end
 
   def update
-    @astrologist = Astrologist.update(strong_params)
-
+    @astrologist.update(strong_params)
     redirect_to astrologist_path(@astrologist)
   end
 
