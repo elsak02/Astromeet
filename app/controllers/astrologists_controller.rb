@@ -8,9 +8,13 @@ class AstrologistsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @unavailable_dates = @astrologist.bookings.map do |booking|
+      booking.date
+    end
   end
 
   def dashboard
+    @astrologist = Astrologist.find_by(user: current_user)
   end
 
   def new
@@ -42,6 +46,6 @@ class AstrologistsController < ApplicationController
   end
 
   def strong_params
-    params.require(:astrologist).permit(:experience, :price, :user_id)
+    params.require(:astrologist).permit(:experience, :price, :user_id, speciality: [])
   end
 end
