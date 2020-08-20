@@ -13,8 +13,12 @@
                   <h1 class="horizontal-line"><%= astrologist.user.last_name %></h1>
                 </div>
               </div>
-              <div class="card-bottom pl-3 py-3">
+              <div class="card-bottom p-3 d-flex justify-content-between">
                 <p> <strong><%= astrologist.price %></strong> € / hour</p>
+                <p><%astrologist.rating_average.times do%>
+                    <i class="fas fa-star"></i>
+                    <% end %>
+                </p>
               </div>
             </div>
           </div>

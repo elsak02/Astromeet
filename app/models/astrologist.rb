@@ -6,4 +6,13 @@ class Astrologist < ApplicationRecord
 
   validates :experience, presence: true
   validates :price, presence: true
+  validates :speciality, presence: true
+
+  def rating_average
+    return 0 if reviews.empty?
+
+    ratings = reviews.pluck(:rating)
+    return (ratings.sum / ratings.length)
+  end
+
 end
