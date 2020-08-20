@@ -1,2 +1,55 @@
-<h1>My Reviews</h1>
-<h1>My Bookings</h1>
+<div class="container content">
+  <div class="profile-card-dash mt-5 mb-4 mr-5">
+        <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path current_user.photo.key %>')">
+          <div class="name-card">
+            <h1><%= current_user.first_name %></h1>
+            <h1 class="horizontal-line pb-3"><%= current_user.last_name %></h1>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <p> <strong>Date of birth:</strong> <%= current_user.birth_date.strftime(" %A %e %B %Y") %></p>
+          <p> <strong>Number of Bookings:</strong> <%= @astrologist.bookings.count %></p>
+          <p> <strong>Number of Reviews:</strong> <%= @astrologist.reviews.count %></p>
+        </div>
+       </div>
+       <div class="text-center">
+        <%= link_to 'Show my astrologist profile', astrologist_path(current_user.astrologists.first), class: "button my-3 mr-4" %>
+        <%= link_to 'Edit astrologist profile', edit_astrologist_path(current_user.astrologists.first), class: "button my-3 mr-4" %>
+      </div>
+    </div>
+
+
+<h1 class="text-center dash-h">My Bookings</h1>
+    <div class="reviews">
+      <div class="row">
+        <% @astrologist.bookings.sort.reverse.each do |booking| %>
+          <div class="col-6">
+            <div class="box-dashboard card-body">
+              <%= cl_image_tag booking.user.photo.key, :style => "width: 80px;height: 80px;border-radius: 50%;object-fit: cover;"  %>
+              <p class="inline"><strong>Name</strong> <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+              <p class="inline"><strong>Booking date</strong> <%= booking.date.strftime(" %A %e %B %Y") %> <%= booking.time.strftime(" %l %p %M") %></p>
+              <p class="inline"><strong>Birth date of client</strong> <%= booking.user.birth_date.strftime(" %A %e %B %Y") %> <%= booking.user.birth_time.strftime(" %l %p %M") %></p>
+              <p class="inline"><strong>Birth place of client</strong> <%= booking.user.birth_place %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+<h1 class="text-center dash-h">My Reviews</h1>
+    <div class="reviews">
+      <div class="row">
+        <% @astrologist.reviews.sort.reverse.each do |review| %>
+          <div class="col-6">
+            <div class="box-rating card-body">
+              <%= cl_image_tag review.booking.user.photo.key, class: "avatar" %>
+              <p><%= review.booking.user.first_name %></p>
+              <p><i class="fas fa-star"><%= review.rating %></i></p>
+              <p><i class="fas fa-quote-left quote"></i><%= review.comment%> <i class="fas fa-quote-right quote"></i></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>
