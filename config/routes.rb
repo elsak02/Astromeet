@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :astrologists, only: [:index, :show, :new, :create, :edit, :update, :dashboard] do
     resources :bookings, only: [:new, :create]
   end
+
+  resources :bookings, only: [] do
+    resources :reviews, only: [:new, :create]
+  end
   resources :users, only: [:show]
   get 'dashboard', to: 'astrologists#dashboard'
 end

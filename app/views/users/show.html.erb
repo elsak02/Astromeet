@@ -25,11 +25,28 @@
     </div>
     <div class="right-div d-flex flex-column ">
         <h1 class="text-center mt-5 ml-5 booking-text">My Bookings</h1>
-        <% current_user.bookings.each do |booking| %>
+        <% current_user.bookings.order(date: :desc).each do |booking| %>
           <div class="booking-card my-5 ml-5 mb-3">
             <div class="card-bottom text-left">
               <p><strong>Astrologist:</strong> <%= booking.astrologist.user.first_name %> <%= booking.astrologist.user.last_name %></p>
               <p><strong>Appointment:</strong> <%= booking.date.strftime(" %A %e %B %Y") %> at <%= booking.time.strftime(" %l %p %M") %></p>
+              <% if booking.date <= DateTime.now %>
+                <p>
+                  <a class="button review-button" data-toggle="collapse" href="#collapse<%= booking.id %>" role="button" aria-expanded="false" aria-controls="collapseExample" id="review-button<%= booking.id %>">
+                    Leave a review
+                  </a>
+                </p>
+                <div class="collapse" id="collapse<%= booking.id %>">
+                  <%= simple_form_for([booking,@review]) do |f| %>
+                    <%= f.input :rating, as: :select, collection: 1..5 %>
+                    <%= f.input :comment, placeholder: "It was a great session. I can already see myself changing!" %>
+                  <div class="d-flex">
+                    <%= f.submit "Leave a review", class: "button" %>
+                  <% end %>
+                  <a class= "button" id="cancel-button" data-booking-id="<%= booking.id %>">Cancel</a>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
         <% end %>

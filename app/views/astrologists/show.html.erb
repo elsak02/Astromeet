@@ -50,6 +50,28 @@
     <h2>Reviews</h2>
 
   </div>
+
+  <p>
+  <a class="button" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <%=@astrologist.user.first_name%>'s Reviews
+  </a>
+</p>
+  <div class="collapse" id="collapseExample">
+    <div class="reviews">
+      <div class="row">
+        <% @astrologist.reviews.sort.reverse.each do |review| %>
+          <div class="col-6">
+            <div class="box-rating card-body">
+              <%= cl_image_tag review.booking.user.photo.key, class: "avatar" %>
+              <p><%= review.booking.user.first_name %></p>
+              <p><i class="fas fa-star"><%= review.rating %></i></p>
+              <p><i class="fas fa-quote-left quote"></i><%= review.comment%> <i class="fas fa-quote-right quote"></i></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 

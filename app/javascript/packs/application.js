@@ -28,9 +28,12 @@ import { initFlatpicker } from "../plugins/flatpickr";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { reviewForm } from '../components/review_form'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  reviewForm();
   initFlatpicker();
 });
