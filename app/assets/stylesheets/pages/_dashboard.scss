@@ -1,0 +1,44 @@
+.box-dashboard {
+  box-shadow: 0px 0px 7px rgba(0,0,0,0.2);
+  color: #294045;
+  line-height: 0px;
+  font-family: $headers-font;
+  margin: 15px;
+  font-size: 11px;
+  letter-spacing: 1px;
+
+}
+
+.dash-h {
+  font-family: 'Roboto Mono', monospace;
+  color: #294045;
+  margin: 10px;
+}
+
+
+.profile-card-dash {
+  border: 1px solid #CBB569;
+  box-shadow: 6px 6px 0px #CBB569;
+
+  .card-top {
+    color: #CBB569;
+    font-family: $headers-font;
+    border-bottom: 1px solid #CBB569;
+    text-align: left;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+
+    .name-card {
+      padding-top: 300px;
+      padding-left: 20px;
+    }
+  }
+
+  .card-bottom {
+    color: #294045;
+    font-family: "Roboto Mono";
+    padding: 10px;
+  }
+
+  }

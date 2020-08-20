@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_08_20_151018) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_151018) do
     t.bigint "astrologist_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "confirmed", default: true
     t.index ["astrologist_id"], name: "index_bookings_on_astrologist_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
