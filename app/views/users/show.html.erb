@@ -26,7 +26,7 @@
     <div class="right-div d-flex flex-column ">
         <h1 class="text-center mt-5 ml-5 booking-text">My Bookings</h1>
         <% current_user.bookings.order(date: :desc).each do |booking| %>
-          <div class="booking-card my-5 ml-5 mb-3">
+          <div class="booking-card mt-5 ml-5">
             <div class="card-bottom text-left">
               <p><strong>Astrologist:</strong> <%= booking.astrologist.user.first_name %> <%= booking.astrologist.user.last_name %></p>
               <p><strong>Appointment:</strong> <%= booking.date.strftime(" %A %e %B %Y") %> at <%= booking.time.strftime(" %l %p %M") %></p>
@@ -43,7 +43,7 @@
                   <div class="d-flex">
                     <%= f.submit "Leave a review", class: "button" %>
                   <% end %>
-                  <a class= "button" id="cancel-button" data-booking-id="<%= booking.id %>">Cancel</a>
+                  <a id="cancel-button" data-booking-id="<%= booking.id %>">Cancel</a>
                   </div>
                 </div>
               <% end %>

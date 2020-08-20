@@ -21,21 +21,20 @@
   padding-top: 4px;
 }
 
+  li.list-group-item {
+    margin-right: 5px;
+    background: #e4dfcf;
+    border: none;
+    font-size: 14px;
+    color: #927f42;
+    padding: 4px 8px;
+}
+
 }
 .reviews.quote {
   font-size: 2px;
 }
 
-.box-rating {
-  width: 300px;
-  box-shadow: 0px 0px 7px rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: space-around;
-  color: #294045;
-  font-family: $headers-font;
-  margin: 15px;
-
-}
 
 .pink-line {
     border-bottom: 1px solid #B88778;
@@ -55,11 +54,6 @@
   // justify-content: center;
   margin: 0 auto;
 }
-
-.reviews {
-  color: #294045;
-}
-
 
 
 .booking_time {
@@ -85,3 +79,9 @@
 .btn-book {
   width: 307.88px;
 }
+
+.reviews {
+  color: #294045;
+}
+
+

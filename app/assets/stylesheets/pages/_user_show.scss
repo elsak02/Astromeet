@@ -25,3 +25,26 @@
  .horizontal-line {
     border-bottom: 2px solid #CBB569;
   }
+
+#cancel-button {
+    /*Button Text Style*/
+    font-family:'Inconsolata', 'Helvetica', 'Arial', sans-serif;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: grey;
+    outline: none;
+    /*Position, Display, Size*/
+    position: relative;
+    display: inline-block;
+    padding: 10px 8px 12px;
+    cursor: pointer;
+    width: auto;
+    margin-left: 10px;
+    align: baseline;
+    &:hover {
+    color: #294045;
+
+}
+}

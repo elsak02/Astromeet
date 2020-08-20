@@ -9,6 +9,7 @@ require 'faker'
 require 'open-uri'
 require 'stringio'
 
+Review.destroy_all
 Booking.destroy_all
 Astrologist.destroy_all
 User.destroy_all
