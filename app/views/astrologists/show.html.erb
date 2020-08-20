@@ -1,23 +1,56 @@
 <div class="container content">
-  <div class="row">
-    <div class="d-flex align-items-center justify-content-center mt-3">
-      <div id="l-box-shadow" class="my-4">
-        <% if @astrologist.user.photo.attached? %>
-          <%= cl_image_tag @astrologist.user.photo.key, width: 338, heigth: 450 %>
-        <% end %>
-      </div>
-      <div class=" d-flex align-items-center position-relative">
-        <div class="infos container-right-text ml-5">
-          <h1><%= @astrologist.user.first_name %> <%= @astrologist.user.last_name %></h1>
-          <p><%= @astrologist.experience%></p>
-          <h3 class="mb-5"><%= @astrologist.price %>€ / hour</h3>
-          <% if user_signed_in? && current_user.id == @astrologist.user_id%>
-            <%= link_to "Edit offer", edit_astrologist_path(@astrologist), class: "button" %>
-          <% else %>
-            <%= link_to "Book this Astrologist", new_astrologist_booking_path(@astrologist), class: "button" %>
+
+  <div class="d-flex align-items-center mt-5">
+
+    <div id="l-box-shadow" class="mr-5">
+      <% if @astrologist.user.photo.attached? %>
+        <%= cl_image_tag @astrologist.user.photo.key, width: 350, heigth: 500 %>
+      <% end %>
+    </div>
+
+    <div class="astro-info">
+      <h1 class="text-center pb-3"><%= @astrologist.user.first_name %> <%= @astrologist.user.last_name %></h1>
+      <ul class="list-group list-group-horizontal justify-items-center">
+        <li class="list-group-item">Natal chart reading</li>
+        <li class="list-group-item">Astrology forecast</li>
+        <li class="list-group-item">Couple compatibility analysis</li>
+      </ul>
+      <h4 class="pt-5"> Price: <%= @astrologist.price %>€/hour</h4>
+      <% if user_signed_in? && current_user.id == @astrologist.user_id%>
+          <%= link_to "Edit offer", edit_astrologist_path(@astrologist), class: "button" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="mt-5 pink-line"></div>
+
+
+  <div class="d-flex justify-items-center mt-5  justify-content-between">
+    <div class="astro-exp ml-4 mr-3">
+      <h3 class="text-center">Experience:</h3>
+      <p class="text-left mt-4"><%= @astrologist.experience%></p>
+    </div>
+
+    <div class="appointment">
+      <% if current_user.id != @astrologist.user_id%>
+
+        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+          <%= simple_form_for :search, method: "get" do |f| %>
+            <%= f.input :starts_at, as: :string, label: false, required: false, input_html: {class: "datepicker d-none"} %>
+
+            <%= f.submit "Book this Astrologist", class: "button mt-3" %>
+
           <% end %>
         </div>
       </div>
-    </div>
+    <% end %>
+  </div>
+  <div class="mt-5 pink-line"></div>
+
+
+  <div class="reviews text-center mt-5">
+    <h2>Reviews</h2>
+
   </div>
 </div>
+
+
