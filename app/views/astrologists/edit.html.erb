@@ -1,16 +1,11 @@
-<div class="content">
+<div class="content text-center mt-5">
   <h1>Edit profile</h1>
-
+  <div class="container d-flex justify-content-center py-5 my-3">
   <%= simple_form_for(@astrologist) do |f| %>
-
-    <div class="form-inputs">
-      <%= f.input :experience %>
-      <%= f.input :price %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Edit profile", class: "button" %>
-    </div>
+      <%= f.input :experience, :label_html => { :class => 'label' } %>
+      <%= f.input :price, :label_html => { :class => 'label' } %>
+      <%= f.submit "Edit profile", class: "button submit" %>
   <% end %>
-
+  </div>
 </div>
+
