@@ -7,6 +7,10 @@ class AstrologistsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+  end
+
+  def dashboard
   end
 
   def new
