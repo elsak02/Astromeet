@@ -10,6 +10,9 @@ class AstrologistsController < ApplicationController
     @booking = Booking.new
   end
 
+  def dashboard
+  end
+
   def new
     @astrologist = Astrologist.new
   end

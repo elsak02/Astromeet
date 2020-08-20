@@ -13,4 +13,8 @@ class User < ApplicationRecord
   validates :birth_time, presence: true
   validates :birth_place, presence: true
   validates :photo, presence: true
+
+  def astrologist?
+    astrologists.any?
+  end
 end
