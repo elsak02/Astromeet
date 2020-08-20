@@ -46,7 +46,28 @@
   color: #294045;
 }
 
-.simple_form.search {
-  text-align: center;
-  margin-left: 10px;
+
+
+.booking_time {
+  width: 307.88px;
+}
+
+.time-label {
+  color: #294045;
+  font-family: 'Roboto Mono', monospace;
+  padding-bottom: 10px;
+  font-size: 14px;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+#new_booking {
+  margin: 0 auto;
+   .search {
+    text-align: center;
+   }
+}
+
+.btn-book {
+  width: 307.88px;
 }

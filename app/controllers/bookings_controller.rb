@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
     @astrologist = Astrologist.find(params[:astrologist_id])
     @booking.user = current_user
     @booking.astrologist = @astrologist
+
     if @booking.save
       redirect_to user_path(current_user)
     else

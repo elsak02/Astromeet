@@ -34,11 +34,10 @@
       <% if current_user.id != @astrologist.user_id%>
 
         <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-          <%= simple_form_for :search, method: "get" do |f| %>
-            <%= f.input :starts_at, as: :string, label: false, required: false, input_html: {class: "datepicker d-none"} %>
-
-            <%= f.submit "Book this Astrologist", class: "button mt-3" %>
-
+          <%= simple_form_for [@astrologist, @booking], method: "post" do |f| %>
+            <%= f.input :date, as: :string, label: false, required: false, input_html: {class: "datepicker d-none"} %>
+            <%= f.input :time, :label => 'Appointment time:', :label_html => { :class => 'time-label' } %>
+            <%= f.submit "Book this Astrologist", class: "button mt-3 btn-book" %>
           <% end %>
         </div>
       </div>
