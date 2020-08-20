@@ -15,6 +15,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def cancel
+    # @user = User.find(current_user)
+    @booking = Booking.find(params[:id])
+    @booking.confirmed = false
+    @booking.save
+
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def booking_params
