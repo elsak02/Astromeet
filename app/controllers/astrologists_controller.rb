@@ -8,6 +8,9 @@ class AstrologistsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @unavailable_dates = @astrologist.bookings.map do |booking|
+      booking.date
+    end
   end
 
   def dashboard

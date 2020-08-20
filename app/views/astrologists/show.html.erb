@@ -15,10 +15,14 @@
         <li class="list-group-item">Astrology forecast</li>
         <li class="list-group-item">Couple compatibility analysis</li>
       </ul>
-      <h4 class="pt-5"> Price: <%= @astrologist.price %>€/hour</h4>
-      <% if user_signed_in? && current_user.id == @astrologist.user_id%>
-          <%= link_to "Edit offer", edit_astrologist_path(@astrologist), class: "button" %>
-      <% end %>
+      <div class="d-flex" style="align-items: baseline;">
+        <h4 class="pt-5"> Price: <%= @astrologist.price %>€/hour</h4>
+        <% if user_signed_in? && current_user.id == @astrologist.user_id%>
+            <%= link_to edit_astrologist_path(@astrologist) do %>
+              <i class="far fa-edit edit-link pl-4"></i>
+            <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="mt-5 pink-line"></div>
@@ -31,17 +35,24 @@
     </div>
 
     <div class="appointment">
-      <% if current_user.id != @astrologist.user_id%>
+
 
         <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
           <%= simple_form_for [@astrologist, @booking], method: "post" do |f| %>
-            <%= f.input :date, as: :string, label: false, required: false, input_html: {class: "datepicker d-none"} %>
-            <%= f.input :time, :label => 'Appointment time:', :label_html => { :class => 'time-label' } %>
-            <%= f.submit "Book this Astrologist", class: "button mt-3 btn-book" %>
+            <%= f.input :date,
+              as: :string,
+              label: false,
+              required: false,
+              input_html: {class: "datepicker d-none", data: {unavailable_dates: @unavailable_dates.to_json}}
+            %>
+            <% if !user_signed_in? || current_user.id != @astrologist.user_id%>
+              <%= f.input :time, :label => 'Appointment time:', :label_html => { :class => 'time-label' } %>
+              <%= f.submit "Book this Astrologist", class: "button mt-3 btn-book" %>
+            <% end %>
           <% end %>
         </div>
       </div>
-    <% end %>
+
   </div>
   <div class="mt-5 pink-line"></div>
 
