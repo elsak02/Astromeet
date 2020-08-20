@@ -3,6 +3,7 @@
     <%= simple_form_for @astrologist do |f| %>
       <%= f.input :experience, :label => 'Tell us about your experience:', :label_html => { :class => 'label' } %>
       <%= f.input :price, :label => 'Price per hour:', :label_html => { :class => 'label' } %>
+      <%= f.input :speciality, :label => 'Speciality', collection: %w[readings horoscope coaching compatibility], input_html: { multiple: true }, include_hidden: false, as: :check_boxes %>
       <%= f.submit 'Create astrologist profile', class:'button submit' %>
     <% end %>
   </div>

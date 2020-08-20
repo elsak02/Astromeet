@@ -6,4 +6,5 @@ class Astrologist < ApplicationRecord
 
   validates :experience, presence: true
   validates :price, presence: true
+  validates :speciality, presence: true
 end
