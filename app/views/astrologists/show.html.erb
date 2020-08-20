@@ -11,9 +11,9 @@
     <div class="astro-info">
       <h1 class="text-center pb-3"><%= @astrologist.user.first_name %> <%= @astrologist.user.last_name %></h1>
       <ul class="list-group list-group-horizontal justify-items-center">
-        <li class="list-group-item">Natal chart reading</li>
-        <li class="list-group-item">Astrology forecast</li>
-        <li class="list-group-item">Couple compatibility analysis</li>
+        <% @astrologist.speciality.gsub(/[^a-zA-Z,]/i, '').split(',').each do |speciality| %>
+        <li class="list-group-item"><%= speciality %></li>
+        <% end %>
       </ul>
       <h4 class="pt-5"> Price: <%= @astrologist.price %>€/hour</h4>
       <% if user_signed_in? && current_user.id == @astrologist.user_id%>

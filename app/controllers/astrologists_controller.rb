@@ -42,6 +42,6 @@ class AstrologistsController < ApplicationController
   end
 
   def strong_params
-    params.require(:astrologist).permit(:experience, :price, :user_id)
+    params.require(:astrologist).permit(:experience, :price, :user_id, speciality: [])
   end
 end
