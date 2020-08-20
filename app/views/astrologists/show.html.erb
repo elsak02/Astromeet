@@ -10,7 +10,7 @@
         <div class="infos container-right-text ml-5">
           <h1><%= @astrologist.user.first_name %> <%= @astrologist.user.last_name %></h1>
           <p><%= @astrologist.experience%></p>
-          <h3 class="mb-5"> Price per hour: <%= @astrologist.price %>€</h3>
+          <h3 class="mb-5"><%= @astrologist.price %>€ / hour</h3>
           <% if user_signed_in? && current_user.id == @astrologist.user_id%>
             <%= link_to "Edit offer", edit_astrologist_path(@astrologist), class: "button" %>
           <% else %>
