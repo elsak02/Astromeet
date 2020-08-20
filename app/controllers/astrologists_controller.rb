@@ -11,6 +11,7 @@ class AstrologistsController < ApplicationController
   end
 
   def dashboard
+    @astrologist = Astrologist.find_by(user: current_user)
   end
 
   def new
