@@ -4,6 +4,7 @@
     <h1 class=" title pt-5">Our amazing astrologists are here to help you</h1>
       <div class="grid">
         <% @astrologists.each do |astrologist| %>
+        <%= link_to astrologist_path(astrologist) do %>
           <div class="d-flex justify-content-center">
             <div class="astrologist-card my-4">
               <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path astrologist.user.photo.key %>')">
@@ -13,11 +14,11 @@
                 </div>
               </div>
               <div class="card-bottom pl-3 py-3">
-                <p> <strong>Price per hour:</strong> <%= astrologist.price %></p>
-                <%= link_to "See details", astrologist_path(astrologist)%>
+                <p> <strong><%= astrologist.price %></strong> € / hour</p>
               </div>
             </div>
           </div>
+          <% end %>
         <% end %>
       </div>
   </div>

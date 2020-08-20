@@ -63,6 +63,13 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   margin-top: 20px;
+  a {
+  text-decoration: none;
+  }
+  p {
+    text-decoration: none;
+    color: #294045;
+  }
 }
 
 h2 {
