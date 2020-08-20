@@ -57,5 +57,11 @@ ross = User.create(email: "ross.clarck@gmail.com", password: "lkjlkj678", first_
 ross.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
 astro_ross = Astrologist.create(experience: "Ross Clark is the CEO and Co-Founder of Sanctuary, an innovative venture-backed start-up focusing on astrology and other mystical products and services. Ross has spent his career at the cutting edge of digital media, leading business development and strategy for the boldest names in the industry: NBCUniversal, Hearst, Snap and Condé Nast. In this span, he has brokered industry-first partnerships between established and emerging players. Astrology and mystical services are misunderstood corners of wellness that has yet to be holistically digitalized and communicated to the mainstream public. With his keen understanding of what type of content and services draws views and engagement, Ross is reimaging the category for a mobile-first UX and building a new, dynamic component of the sharing economy. ", price: 140, user: ross)
 
+puts "Creating Booking seeds..."
 
+booking_test = Booking.create(astrologist: astro_nadine, user: mathilda_test, date: "2020-08-17", time: "2000-01-01 12:30:00")
+
+puts "Creating Review seeds..."
+
+review_test = Review.create(rating: 4, booking: booking_test, comment: "Great session with Nadine")
 

@@ -30,6 +30,23 @@
             <div class="card-bottom text-left">
               <p><strong>Astrologist:</strong> <%= booking.astrologist.user.first_name %> <%= booking.astrologist.user.last_name %></p>
               <p><strong>Appointment:</strong> <%= booking.date.strftime(" %A %e %B %Y") %> at <%= booking.time.strftime(" %l %p %M") %></p>
+              <% if booking.date <= DateTime.now %>
+                <p>
+                  <a class="button" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="review-button">
+                    Leave a review
+                  </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                  <%= simple_form_for([booking,@review]) do |f| %>
+                    <%= f.input :rating, as: :select, collection: 1..5 %>
+                    <%= f.input :comment, placeholder: "It was a great session. I can already see myself changing!" %>
+                  <div class="d-flex">
+                    <%= f.submit "Leave a review", class: "button" %>
+                  <% end %>
+                  <a class= "button" id="cancel-button">Cancel</a>
+                  </div>
+                </div>
+              <% end %>
             </div>
           </div>
         <% end %>

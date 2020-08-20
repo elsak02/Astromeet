@@ -20,4 +20,12 @@
       </div>
     </div>
   </div>
+  <div class="reviews">
+    <% @astrologist.reviews.each do |review| %>
+      <div class="box-rating">
+        <p><i class="fas fa-star"><%= review.rating %></i></p>
+        <p><i class="fas fa-quote-left quote"></i><%= review.comment%> <i class="fas fa-quote-right quote"></i></p>
+      </div>
+    <% end %>
+  </div>
 </div>
