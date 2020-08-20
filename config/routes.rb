@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [] do
+    member do
+      patch '/cancel', to: 'bookings#cancel'
+    end
     resources :reviews, only: [:new, :create]
   end
   resources :users, only: [:show]

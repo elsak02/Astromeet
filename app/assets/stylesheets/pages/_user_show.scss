@@ -26,6 +26,20 @@
     border-bottom: 2px solid #CBB569;
   }
 
+.cancel-appointment {
+  color: #B88778;
+  margin-left: 450px;
+
+}
+
+.card-cancelled {
+  opacity: 0.3;
+}
+
+.txt-cancelled {
+  color: red;
+  margin-left: 390px;
+
 #cancel-button {
     /*Button Text Style*/
     font-family:'Inconsolata', 'Helvetica', 'Arial', sans-serif;
@@ -47,4 +61,5 @@
     color: #294045;
 
 }
+
 }
