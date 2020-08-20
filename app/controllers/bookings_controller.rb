@@ -1,7 +1,5 @@
 class BookingsController < ApplicationController
   def new
-    @booking = Booking.new
-    @astrologist = Astrologist.find(params[:astrologist_id])
   end
 
   def create
