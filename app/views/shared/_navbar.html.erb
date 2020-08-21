@@ -43,7 +43,7 @@
           <% end %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete,  class: "dropdown-item" %>
         <% else %>
-          <%= link_to "Sign up/Log in", new_user_session_path, class: "dropdown-item" %>
+          <%= link_to "Sign up/Log in", new_user_session_path, class: "dropdown-item", id:"link-astro"%>
         <% end %>
         </div>
       </li>
