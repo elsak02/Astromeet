@@ -10,6 +10,10 @@
           <p> <strong>Date of birth:</strong> <%= current_user.birth_date.strftime(" %A %e %B %Y") %></p>
           <p> <strong>Number of Bookings:</strong> <%= @astrologist.bookings.count %></p>
           <p> <strong>Number of Reviews:</strong> <%= @astrologist.reviews.count %></p>
+          <p> <strong>Average of my Ratings:</strong> <%@astrologist.rating_average.times do%>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </p>
         </div>
        </div>
        <div class="text-center">
