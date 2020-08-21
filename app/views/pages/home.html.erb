@@ -44,43 +44,28 @@
     <div class="carousel-item active text-center">
           <%= cl_image_tag @review.booking.user.photo.key, :style => "width: 80px;height: 80px;border-radius: 50%;object-fit: cover;"  %>
           <p><i class="fa fa-quote-left" aria-hidden="true"></i> <%= @review.comment  %> <i class="fa fa-quote-right" aria-hidden="true"></i></p>
-          <p class= "font-weight-bold"> <%= @review.booking.user.first_name %></p>
           <p> <% @review.rating.times do %>
                 <i class="fas fa-star"></i>
               <% end %>
           </p>
+          <p class= "font-weight-bold">Comment By: <%= @review.booking.user.first_name %></p>
+          <p class= "font-weight-bold"> About: <%= @review.booking.astrologist.user.first_name %> <%= @review.booking.astrologist.user.last_name %></p>
         </div>
 
-            <div class="carousel-item text-center">
-          <%= cl_image_tag @review2.booking.user.photo.key, :style => "width: 80px;height: 80px;border-radius: 50%;object-fit: cover;"  %>
-          <p><i class="fa fa-quote-left" aria-hidden="true"></i> <%= @review2.comment  %> <i class="fa fa-quote-right" aria-hidden="true"></i></p>
-          <p class= "font-weight-bold"> <%= @review2.booking.user.first_name %></p>
-          <p> <% @review2.rating.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-          </p>
-        </div>
+        <% @reviews.each do |review|  %>
 
-            <div class="carousel-item text-center">
-          <%= cl_image_tag @review3.booking.user.photo.key, :style => "width: 80px;height: 80px;border-radius: 50%;object-fit: cover;"  %>
-          <p><i class="fa fa-quote-left" aria-hidden="true"></i> <%= @review3.comment  %> <i class="fa fa-quote-right" aria-hidden="true"></i></p>
-          <p class= "font-weight-bold"> <%= @review3.booking.user.first_name %></p>
-          <p> <% @review3.rating.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-          </p>
-        </div>
+              <div class="carousel-item text-center">
+            <%= cl_image_tag review.booking.user.photo.key, :style => "width: 80px;height: 80px;border-radius: 50%;object-fit: cover;"  %>
+            <p><i class="fa fa-quote-left" aria-hidden="true"></i> <%= review.comment  %> <i class="fa fa-quote-right" aria-hidden="true"></i></p>
+            <p> <% review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+            </p>
+            <p class= "font-weight-bold">Comment By: <%= review.booking.user.first_name %></p>
+            <p class= "font-weight-bold"> About: <%= review.booking.astrologist.user.first_name %> <%= review.booking.astrologist.user.last_name %></p>
+          </div>
+        <% end %>
 
-                    <div class="carousel-item text-center">
-          <%= cl_image_tag @review4.booking.user.photo.key, :style => "width: 80px;height: 80px;border-radius: 50%;object-fit: cover;"  %>
-          <p><i class="fa fa-quote-left" aria-hidden="true"></i> <%= @review4.comment  %> <i class="fa fa-quote-right" aria-hidden="true"></i></p>
-          <p class= "font-weight-bold"> <%= @review4.booking.user.first_name %></p>
-          <p> <% @review4.rating.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-          </p>
-        </div>
-      </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only" >Previous</span>
@@ -91,4 +76,5 @@
     </a>
 
   </div>
+</div>
 </div>
