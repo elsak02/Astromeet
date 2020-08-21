@@ -25,7 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initFlatpicker } from "../plugins/flatpickr";
-
+import { textWrapper } from "../channels/home";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { reviewForm } from '../components/review_form'
