@@ -3,7 +3,16 @@ class AstrologistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @astrologists = Astrologist.all
+    if params[:query].present?
+      sql_query = " \
+        astrologists.speciality ILIKE :query \
+        OR users.first_name ILIKE :query \
+        OR users.last_name ILIKE :query \
+      "
+      @astrologists = Astrologist.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @astrologists = Astrologist.all
+    end
   end
 
   def show

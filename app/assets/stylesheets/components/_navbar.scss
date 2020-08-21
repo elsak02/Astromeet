@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background:rgba(170,109,89, 0.8);
+  p {
+    color: #294045;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -38,6 +41,48 @@ a.dropdown-item:hover {
 a.nav-item {
 
 }
+
+#search{
+  background-color: #E1D2CD;
+  width: 300px;
+  height: 30px;
+  margin: 10px;
+  color: #294045;
+}
+
+#button-search {
+    /*Button Text Style*/
+    font-family:'Inconsolata', 'Helvetica', 'Arial', sans-serif;
+    font-size: 8px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration:none;
+    /*Button Color & Border*/
+    border: 2px solid #B88778 ;
+    color: #B88778;
+    background: #E1D2CD;
+    outline: none;
+    /*Position, Display, Size*/
+    position: relative;
+    display: inline-block;
+    padding: 5px 7px;
+    margin: 8px 0px;
+    cursor: pointer;
+    width: auto;
+    box-shadow: 5px 5px 3px #B88778;
+    &:hover {
+  text-decoration: none;
+  color: #294045;
+  }
+}
+
+#link-astro{
+  color: #E1D2CD;
+}
+
+
 
 // .nav-item:hover {
 //   background-color: transparent;
