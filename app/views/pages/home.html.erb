@@ -37,9 +37,9 @@
         </div>
     </div>
 
-
   <h1 class="text-center my-5">Our Top Reviews</h1>
- <div id="carouselExampleIndicators" class="carousel slide p-3 mt-4" data-ride="carousel">
+ <div id="carouselExampleIndicators" class="carousel slide p-3 mt-4" data-ride="carousel" data-interval="3000">
+
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
           <%= cl_image_tag @review.booking.user.photo.key, :style => "width: 80px;height: 80px;border-radius: 50%;object-fit: cover;"  %>
