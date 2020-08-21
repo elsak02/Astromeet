@@ -15,6 +15,8 @@
 
 .service-card {
   text-align: center;
+  width: 248px;
+
   p {
     padding: 20px;
   }
@@ -29,10 +31,25 @@
   font-size: 32px;
   text-align: center;
 }
-
  .text-home {
   font-weight: 900;
   font-size: 3.5em;
 }
 
+.button-banner {
+  position: absolute;
+  top: 612px;
+  box-shadow: none;
+  padding: 15px 20px;
+  font-size: 14px;
+}
 
+.button-banner:hover {
+  text-decoration: none;
+
+
+}
+
+h1, p {
+  color: #1F3136;
+}

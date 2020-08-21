@@ -1,17 +1,32 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-  <%= image_tag"logo_astromeet_bold.png", alt: "logo astromeet" %>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="d-flex align-items-center">
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag"logo_astromeet_bold.png", alt: "logo astromeet" %>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
   <div>
+
+  <div class="search-bar">
+    <%= form_tag astrologists_path, method: :get do %>
+      <div class="d-flex">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control", id: "search",
+          placeholder: "Find an astrologist"
+        %>
+        <%= submit_tag "Search", id: "button-search" %>
+      </div>
+    <% end %>
+  </div>
+
 
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-     <%= link_to "Our Astrologists", astrologists_path, class: "text-right"  %>
+     <%= link_to "Our Astrologists", astrologists_path, class: "text-right", id:"link-astro"  %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown" style="hover: #B98879 ">
         <%  if user_signed_in? %>
