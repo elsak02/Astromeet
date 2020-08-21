@@ -61,8 +61,13 @@ astro_ross = Astrologist.create(experience: "Ross Clark is the CEO and Co-Founde
 puts "Creating Booking seeds..."
 
 booking_test = Booking.create(astrologist: astro_nadine, user: mathilda_test, date: "2020-08-17", time: "2000-01-01 12:30:00")
+booking_test2 = Booking.create(astrologist: astro_ross, user: quentin_test, date: "2020-08-17", time: "2000-01-01 12:30:00")
+booking_test3 = Booking.create(astrologist: astro_susan, user: mathilda_test, date: "2020-08-17", time: "2000-01-01 12:30:00")
 
 puts "Creating Review seeds..."
 
 review_test = Review.create(rating: 4, booking: booking_test, comment: "Great session with Nadine")
+review_test = Review.create(rating: 4, booking: booking_test2, comment: "Amazing astrologist")
+review_test = Review.create(rating: 5, booking: booking_test3, comment: "It was such a wonderful experience")
+review_test = Review.create(rating: 3, booking: booking_test2, comment: "A must do session")
 
