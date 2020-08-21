@@ -7,7 +7,7 @@
         <%= link_to astrologist_path(astrologist) do %>
           <div class="d-flex justify-content-center">
             <div class="astrologist-card my-4">
-              <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path astrologist.user.photo.key %>')">
+              <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url('<%= cl_image_path astrologist.user.photo.key %>')">
                 <div class="name-card">
                   <h1><%= astrologist.user.first_name %></h1>
                   <h1 class="horizontal-line"><%= astrologist.user.last_name %></h1>
