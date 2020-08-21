@@ -38,7 +38,7 @@ toa_test.save
 file = URI.open("https://images.unsplash.com/photo-1597750955232-b6040c843cf4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
 andreea_test = User.new(email: "andreea@astromeet.com", password: "123456", first_name: "Andreea", last_name: "Pop", birth_date: "1992-05-20", birth_time: "1992-05-20 11:15:02", birth_place: "Louisville")
 andreea_test.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
-andreaa_test.save
+andreea_test.save
 
 # 10.times do |user|
 # file = URI.open("https://source.unsplash.com/featured/?portrait")
@@ -62,7 +62,7 @@ astro_sally = Astrologist.create(experience: "I am a professional astrologer and
 file = URI.open("https://images.squarespace-cdn.com/content/v1/569d95ae5dc6dec5871acd81/1525462916375-H9214MQ4Q5QYR9EB110Y/ke17ZwdGBToddI8pDm48kJKo3YTR7zgUvInmXMbZ6zZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0geeCvn1f36QDdcifB7yxGjTk-SMFplgtEhJ5kBshkhu5q5viBDDnY2i_eu2ZnquSA/IMG_0630.JPG")
 aliza = User.create(email: "aliza.kelly@gmail.com", password: "lkjlkj678", first_name: "Aliza", last_name: "Kelly", birth_date: "1985-04-25", birth_time: "2000-01-01 15:10:47", birth_place: "San Diego")
 aliza.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
-astro_aliza = Astrologist.create(experience: "As the resident astrologer of Cosmopolitan Magazine, my work appears in digital, print, and video. In addition to my monthly digital horoscopes, my cosmic advice column — Ask Astrolobestie — is published each month in Cosmopolitan’s print magazine. I also have contributed to numerous publications including Allure, Girlboss, BuzzFeed, Cheddar, Sanctuary, among many others.", price: 95, user: aliza, speciality: "horoscopes")
+astro_aliza = Astrologist.create(experience: "As the resident astrologer of Cosmopolitan Magazine, my work appears in digital, print, and video. In addition to my monthly digital horoscopes, my cosmic advice column — Ask Astrolobestie — is published each month in Cosmopolitan’s print magazine. I also have contributed to numerous publications including Allure, Girlboss, BuzzFeed, Cheddar, Sanctuary, among many others.", price: 95, user: aliza, speciality: "horoscope")
 
 file = URI.open("https://mysolluna.com/wp-content/uploads/2019/02/Susan-pix-white-blouse.jpeg")
 susan = User.create(email: "susan.miller@gmail.com", password: "lkjlkj678", first_name: "Susan", last_name: "Miller", birth_date: "1975-03-15", birth_time: "2000-01-01 12:10:47", birth_place: "Boston")
@@ -77,7 +77,7 @@ astro_ross = Astrologist.create(experience: "Ross Clark is the CEO and Co-Founde
 file = URI.open("https://femalefoundersfund.com/wp-content/uploads/2020/02/Banu-Guler-2.jpg")
 banu = User.create(email: "banuguler@gmail.com", password: "lkjlkj678", first_name: "Banu", last_name: "Guler", birth_date: "1987-10-23", birth_time: "1987-10-23 07:10:35", birth_place: "Austin")
 banu.photo.attach(io: file, filename: 'astrologist.png', content_type: 'image/png')
-astro_banu = Astrologist.create(experience: "A few years ago, a friend had a baby. I designed and printed a book-length reading of the baby’s chart for the baby shower. It was black and goth, sort of meant to alienate people. But everyone loved it. That was the first moment that I realized astrology might not be something only my weirdo punk friends were into.", price: 120, user: banu, speciality: "readings", "horoscope", "coaching", "compatibility")
+astro_banu = Astrologist.create(experience: "A few years ago, a friend had a baby. I designed and printed a book-length reading of the baby’s chart for the baby shower. It was black and goth, sort of meant to alienate people. But everyone loved it. That was the first moment that I realized astrology might not be something only my weirdo punk friends were into.", price: 120, user: banu, speciality: "coaching")
 
 puts "Creating Booking seeds..."
 
