@@ -12,7 +12,11 @@
           <p> <strong>Date of birth:</strong> <%= @user.birth_date.strftime(" %A %e %B %Y") %></p>
           <p> <strong>Time of birth:</strong> <%= @user.birth_time.strftime(" %l %p %M") %></p>
           <p> <strong>Place of birth:</strong> <%= @user.birth_place %></p>
-          <p> <%= link_to 'Edit profile', edit_user_registration_path %></p>
+          <p class="text-right">
+            <%= link_to edit_user_registration_path do %>
+                <i class="far fa-edit edit-link pl-4"></i>
+              <% end %>
+          </p>
         </div>
        </div>
        <div class="text-center">
@@ -24,10 +28,10 @@
       </div>
     </div>
     <div class="right-div d-flex flex-column ">
-        <h1 class="text-center mt-5 ml-5 booking-text">My Bookings</h1>
+        <h1 class="text-center my-5 ml-5 booking-text">My Bookings</h1>
         <% current_user.bookings.order(date: :desc).each do |booking| %>
           <% if booking.confirmed == true  %>
-            <div class="booking-card my-5 ml-5 mb-3">
+            <div class="booking-card my-3 ml-5 mb-3">
               <div class="card-bottom text-left">
                 <%= link_to cancel_booking_path(booking),
                  method: :patch,
