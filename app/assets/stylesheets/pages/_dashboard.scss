@@ -14,12 +14,15 @@
   color: #294045;
   margin: 10px;
 }
-
+.dashboard-center {
+  display: flex;
+  justify-content: center;
+}
 
 .profile-card-dash {
   border: 1px solid #CBB569;
   box-shadow: 6px 6px 0px #CBB569;
-
+  width: 530px;
 
   h1 {
     color: #CBB569;
