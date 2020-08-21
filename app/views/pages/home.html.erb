@@ -1,19 +1,32 @@
 <div class="header">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( https://www.wellandgood.com/wp-content/uploads/2020/01/01-13-Moon-Phases-Feature.jpg);">
-    <div class="container">
-      <h1>Find your best self with AstroMeet</h1>
+  <div class="banner relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( https://www.wellandgood.com/wp-content/uploads/2020/01/01-13-Moon-Phases-Feature.jpg);">
+    <div class="container d-flex flex-column">
+      <h1 class="title-banner">Find your best self with AstroMeet</h1>
+      <div class="d-flex justify-content-center">
+        <%= link_to "Meet our astrologists", astrologists_path, class: "button button-banner"  %>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container content mt-5">
   <div class="services-info">
-      <h1 class="py-3 text-center">What do you fancy?</h1>
+      <h1 class="pt-5 pb-3 text-center">What do you fancy?</h1>
         <div class="inline mt-5">
+          <div class="service-card">
+            <div class="icon"><%= image_tag"noun_coaching.png", alt: "chart reading", width: 60, height: 50 %>
+            </div>
+            <p>Love coaching</p>
+          </div>
           <div class="service-card">
             <div class="icon"><%= image_tag"noun_chart_reading.png", alt: "chart reading", width: 60, height: 50 %>
             </div>
             <p>Natal chart reading</p>
+          </div>
+          <div class="service-card">
+            <div class="icon"><%= image_tag"noun_compatibility.png", alt: "chart reading", width: 60, height: 50 %>
+            </div>
+            <p>Couple compatibility analysis</p>
           </div>
             <div class="service-card">
             <div class="icon"><%= image_tag"noun_12_forecast.png", alt: "chart reading", width: 60, height: 50 %>
@@ -21,24 +34,11 @@
             </div>
             <p>12-month astrology forecast</p>
             </div>
-          <div class="service-card">
-            <div class="icon"><%= image_tag"noun_compatibility.png", alt: "chart reading", width: 60, height: 50 %>
-            </div>
-            <p>Couple compatibility analysis</p>
-          </div>
-          <div class="service-card">
-            <div class="icon"><%= image_tag"noun_coaching.png", alt: "chart reading", width: 60, height: 50 %>
-            </div>
-            <p>Love coaching</p>
-          </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center">
-      <%= link_to "Meet our astrologists", astrologists_path, class: "button my-3"  %>
-    </div>
 
 
-  <h1 class="text-center mb-4">Our Top Reviews</h1>
+  <h1 class="text-center my-5">Our Top Reviews</h1>
  <div id="carouselExampleIndicators" class="carousel slide p-3 mt-4" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active text-center">
@@ -48,8 +48,8 @@
                 <i class="fas fa-star"></i>
               <% end %>
           </p>
-          <p class= "font-weight-bold">Comment By: <%= @review.booking.user.first_name %></p>
-          <p class= "font-weight-bold"> About: <%= @review.booking.astrologist.user.first_name %> <%= @review.booking.astrologist.user.last_name %></p>
+          <p>Comment By: <%= @review.booking.user.first_name %></p>
+          <p>About: <%= @review.booking.astrologist.user.first_name %> <%= @review.booking.astrologist.user.last_name %></p>
         </div>
 
         <% @reviews.each do |review|  %>
@@ -61,8 +61,8 @@
                   <i class="fas fa-star"></i>
                 <% end %>
             </p>
-            <p class= "font-weight-bold">Comment By: <%= review.booking.user.first_name %></p>
-            <p class= "font-weight-bold"> About: <%= review.booking.astrologist.user.first_name %> <%= review.booking.astrologist.user.last_name %></p>
+            <p>Comment By: <%= review.booking.user.first_name %></p>
+            <p> About: <%= review.booking.astrologist.user.first_name %> <%= review.booking.astrologist.user.last_name %></p>
           </div>
         <% end %>
 
